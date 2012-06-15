@@ -5,11 +5,29 @@ Parse a HTTP user agent and attempt to return something that means something to 
 
 Example:
 
+    require 'user_agent_sanitizer'
+
     UserAgentSanitizer.sanitize_user_agent('Mozilla/5.0 (iPhone; CPU iPhone OS 5_0_1 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9A405 Safari/7534.48.3')
     # => 'iPhone'
-    
+
     UserAgentSanitizer.sanitize_user_agent('Mozilla/5.0 (Linux; U; Android 2.3.3; nl-nl; SAMSUNG GT-I9100/I9100BUKE5 Build/GINGERBREAD) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1')
     # => 'Samsung GT-I9100'
+
+Installation
+------------
+
+Via rubygems
+
+    gem install user_agent_sanitizer
+
+Bundler:
+
+    # Gemfile
+    gem 'user_agent_sanitizer'
+
+From source:
+
+    rake install
 
 New devices
 -----------
