@@ -2,9 +2,6 @@ require 'rake'
 require 'rdoc/task'
 require "rake/gempackagetask"
 
-desc 'Default: run unit tests.'
-task :default => :test
-
 desc 'Generate documentation for the file_wrapper plugin.'
 Rake::RDocTask.new(:rdoc) do |rdoc|
   rdoc.rdoc_dir = 'rdoc'
