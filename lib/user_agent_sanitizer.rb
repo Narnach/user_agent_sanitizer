@@ -76,7 +76,7 @@ module UserAgentSanitizer
     def basic_user_agent_recognizer
       string = @user_agent.dup
       case string
-      when /(Mac OS X) (\d+_\d+_\d+)/
+      when /(Mac OS X) (\d+([_.]\d+)+)/
         @brand = 'Apple'
         @model = "#{$1} #{$2.gsub("_", ".")}"
         return nil

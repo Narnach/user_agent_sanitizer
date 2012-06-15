@@ -40,6 +40,7 @@ describe UserAgentSanitizer do
     'SEC-SGHM620/1.0 Openwave/6.2.3 Profile/MIDP-2.0 Configuration/CLDC-1.1 UP.Browser/6.2.3.3.c.1.101 (GUI) MMP/2.0'                                                   => ['SEC','SGH M620'],
     'SonyEricssonW995/R1FA Browser/NetFront/3.4 Profile/MIDP-2.1 Configuration/CLDC-1.1 JavaPlatform/JP-8.4.3'                                                          => ['SonyEricsson','W995'],
     'Mozilla/5.0 (Linux; U; Android 1.6; nl-nl; SonyEricssonX10i Build/R1FA016) AppleWebKit/528.5+ (KHTML, like Gecko) Version/3.1.2 Mobile Safari/525.20.1'            => ['SonyEricsson','X10i'],
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:11.0) Gecko/20100101 Firefox/11.0'                                                                                 => ['Apple','Mac OS X 10.7'],
   }
   describe "sanitize_user_agent" do
     DEVICES.each do |user_agent, brand_model|
