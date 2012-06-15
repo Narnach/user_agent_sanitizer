@@ -1,7 +1,7 @@
 User agent sanitizer
 ====================
 
-Parse a HTTP user agent and attempt to return something that means something to a human.
+Parse a HTTP user agent and attempt to return something that means something to a human. I started this because I needed to sanitize usage statistics by mobile phones. Most user agent parsers focus on the browser, because that is what matters on the desktop. On mobile I care more about the phone than the browser, so those are the details I focus on.
 
 Example:
 
@@ -48,6 +48,11 @@ Contributing
 ------------
 
 Create a Github issue and/or send a pull request.
+
+Plans
+-----
+
+* Parse browser from user agent. For mobile this should expose devices using Opera Mini. On the desktop, it should reveal the browser instead of the OS.
 
 Contributors
 ------------
