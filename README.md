@@ -14,7 +14,7 @@ Example:
 New devices
 -----------
 
-Every time I encounter a new user agent that does not resolve to something useful, I add it as a test case and tweak the parser until all tested headers are correctly parsed. See [the spec](http://github.com/Narnach/user_agent_sanitizer/spec/user_agent_sanitizer_spec.rb)
+Every time I encounter a new user agent that does not resolve to something useful, I add it as a test case and tweak the parser until all tested headers are correctly parsed. See [the spec](http://github.com/Narnach/user_agent_sanitizer/blob/master/spec/user_agent_sanitizer_spec.rb)
 
 Contributing
 ------------
