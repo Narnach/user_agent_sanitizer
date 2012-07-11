@@ -94,6 +94,14 @@ module UserAgentSanitizer
         @brand = 'Apple'
         @model = $1
         return nil
+      when /PlayStation Portable/
+        @brand = 'Sony'
+        @model = 'PSP'
+        return nil
+      when /Opera Mobi/
+        @brand = 'Opera'
+        @model = 'Mobi'
+        return nil
       when /(Windows NT \w+(\.\w+)+)/
         @brand = "Microsoft"
         @model = $1

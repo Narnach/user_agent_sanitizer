@@ -4,7 +4,7 @@ require 'user_agent_sanitizer'
 
 describe UserAgentSanitizer do
   DEVICES = {
-    # Mobile
+    # Mobile devices
     'BlackBerry8520/4.6.1.296 Profile/MIDP-2.0 Configuration/CLDC-1.1 VendorID/150'                                                                                     => ['BlackBerry', '8520'],
     'BlackBerry8900/4.6.1.199 Profile/MIDP-2.0 Configuration/CLDC-1.1 VendorID/302'                                                                                     => ['BlackBerry', '8900'],
     'HTC_Touch2_T3333 Opera/9.50 (Windows NT 5.1; U; nl)'                                                                                                               => ['HTC','Touch2'],
@@ -14,7 +14,6 @@ describe UserAgentSanitizer do
     'Mozilla/5.0 (iPhone; CPU iPhone OS 5_0_1 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9A405 Safari/7534.48.3'                          => ['Apple','iPhone'],
     'Mozilla/5.0 (iPhone; U; CPU iPhone OS 4_3_5 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8L1 Safari/6533.18.5'              => ['Apple','iPhone'],
     'Mozilla/5.0 (iPhone; U; CPU like Mac OS X; nl-nl) AppleWebKit/420.1 (KHTML, like Gecko) Version/3.0 Mobile/4A102 Safari/419.3'                                     => ['Apple','iPhone'],
-    'Mozilla/5.0 (iPod; U; CPU iPhone OS 4_3 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8F190 Safari/6533.18.5'                => ['Apple','iPod'],
     'Mozilla/5.0 (Linux; U; Android 1.5; en-gb; HTC Magic Build/CRB17) AppleWebKit/528.5+ (KHTML, like Gecko) Version/3.1.2 Mobile Safari/525.20.1'                     => ['HTC','Magic'],
     'Mozilla/5.0 (Linux; U; Android 1.5; nl-nl; GT-I5700 Build/CUPCAKE) AppleWebKit/528.5+ (KHTML, like Gecko) Version/3.1.2 Mobile Safari/525.20.1'                    => ['Samsung','GT-I5700'],
     'Mozilla/5.0 (Linux; U; Android 1.6; nl-nl; SonyEricssonX10i Build/R1FA016) AppleWebKit/528.5+ (KHTML, like Gecko) Version/3.1.2 Mobile Safari/525.20.1'            => ['SonyEricsson','X10i'],
@@ -39,8 +38,13 @@ describe UserAgentSanitizer do
     'SEC-SGHM620/1.0 Openwave/6.2.3 Profile/MIDP-2.0 Configuration/CLDC-1.1 UP.Browser/6.2.3.3.c.1.101 (GUI) MMP/2.0'                                                   => ['SEC','SGH M620'],
     'SonyEricssonW995/R1FA Browser/NetFront/3.4 Profile/MIDP-2.1 Configuration/CLDC-1.1 JavaPlatform/JP-8.4.3'                                                          => ['SonyEricsson','W995'],
 
-    # Tables
+    # Mobile browsers
+    '(Android 4.0.3; Linux; Opera Mobi/ADR-1205181138; U; nl) Presto/2.10.254 Version/12.00'                                                                            => ['Opera', 'Mobi'],
+
+    # Tables and other handhelds
     '(iPad; CPU OS 5_1_1 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9B206 Safari/7534.48.3'                                               => ['Apple', 'iPad'],
+    '(PSP (PlayStation Portable); 2.00)'                                                                                                                                => ['Sony', 'PSP'],
+    'Mozilla/5.0 (iPod; U; CPU iPhone OS 4_3 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8F190 Safari/6533.18.5'                => ['Apple', 'iPod'],
 
     # Desktop
     'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; GTB0.0; SLCC1; .NET CLR 2.0.50727; Media Center PC 5.0; .NET CLR 3.5.30729; .NET CLR 3.0.30618)'                => ['Microsoft','Windows NT 6.0'],
