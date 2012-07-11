@@ -43,11 +43,12 @@ describe UserAgentSanitizer do
     '(iPad; CPU OS 5_1_1 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9B206 Safari/7534.48.3'                                               => ['Apple', 'iPad'],
 
     # Desktop
-    'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; GTB0.0; SLCC1; .NET CLR 2.0.50727; Media Center PC 5.0; .NET CLR 3.5.30729; .NET CLR 3.0.30618)'                => ['Microsoft','Internet Explorer 7.0'],
+    'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; GTB0.0; SLCC1; .NET CLR 2.0.50727; Media Center PC 5.0; .NET CLR 3.5.30729; .NET CLR 3.0.30618)'                => ['Microsoft','Windows NT 6.0'],
     'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:11.0) Gecko/20100101 Firefox/11.0'                                                                                 => ['Apple','Mac OS X 10.7'],
     'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_4) AppleWebKit/536.5 (KHTML, like Gecko) Chrome/19.0.1084.56 Safari/536.5'                                             => ['Apple','Mac OS X 10.7.4'],
     'Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_5_5; nl-nl) AppleWebKit/525.18 (KHTML, like Gecko) Version/3.1.2 Safari/525.20.1'                                     => ['Apple','Mac OS X 10.5.5'],
     'Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_2; en-us) AppleWebKit/531.21.8 (KHTML, like Gecko) Version/4.0.4 Safari/531.21.10'                                  => ['Apple','Mac OS X 10.6.2'],
+    '(Windows; U; Windows NT 6.1; en-US; rv:1.9.2.10) Gecko/20100914 Firefox/3.6.10'                                                                                    => ['Microsoft','Windows NT 6.1'],
   }
   describe "sanitize_user_agent" do
     DEVICES.each do |user_agent, brand_model|

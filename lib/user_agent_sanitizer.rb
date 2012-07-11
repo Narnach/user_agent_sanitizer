@@ -82,10 +82,6 @@ module UserAgentSanitizer
         return nil
       when /(LG|sagem)[\-\/](\w+)/i
         return "#{$1} #{$2}"
-      when /(MSIE) (\d+(\.\d+)*)/
-        @brand = 'Microsoft'
-        @model = "Internet Explorer #{$2}"
-        return nil
       when /(Blackberry) ?(\d+)/i
         return "#{$1} #{$2}"
       when /(HTC)[_\/]([a-z0-9]+)?/i
@@ -98,6 +94,9 @@ module UserAgentSanitizer
         @brand = 'Apple'
         @model = $1
         return nil
+      when /(Windows NT \w+(\.\w+)+)/
+        @brand = "Microsoft"
+        @model = $1
       when /((#{BRANDS.join("|")}).*?)\//i
         result=$1
 
