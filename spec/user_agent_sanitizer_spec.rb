@@ -39,6 +39,9 @@ describe UserAgentSanitizer do
     'SEC-SGHM620/1.0 Openwave/6.2.3 Profile/MIDP-2.0 Configuration/CLDC-1.1 UP.Browser/6.2.3.3.c.1.101 (GUI) MMP/2.0'                                                   => ['SEC','SGH M620'],
     'SonyEricssonW995/R1FA Browser/NetFront/3.4 Profile/MIDP-2.1 Configuration/CLDC-1.1 JavaPlatform/JP-8.4.3'                                                          => ['SonyEricsson','W995'],
 
+    # Tables
+    '(iPad; CPU OS 5_1_1 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9B206 Safari/7534.48.3'                                               => ['Apple', 'iPad'],
+
     # Desktop
     'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; GTB0.0; SLCC1; .NET CLR 2.0.50727; Media Center PC 5.0; .NET CLR 3.5.30729; .NET CLR 3.0.30618)'                => ['Microsoft','Internet Explorer 7.0'],
     'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:11.0) Gecko/20100101 Firefox/11.0'                                                                                 => ['Apple','Mac OS X 10.7'],

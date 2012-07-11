@@ -94,9 +94,9 @@ module UserAgentSanitizer
         return ['Samsung', $2, $4].compact.join(" ")
       when /\((Linux; U; Android.*)\)/
         return $1.split(";").last.split("/").first.gsub(/build/i, "").strip
-      when /(iPod)/
+      when /(iPod|iPad)/
         @brand = 'Apple'
-        @model = 'iPod'
+        @model = $1
         return nil
       when /((#{BRANDS.join("|")}).*?)\//i
         result=$1
