@@ -12,7 +12,7 @@ Example:
 
     UserAgentSanitizer.sanitize_user_agent('Mozilla/5.0 (Linux; U; Android 2.3.3; nl-nl; SAMSUNG GT-I9100/I9100BUKE5 Build/GINGERBREAD) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1')
     # => 'Samsung GT-I9100'
-    
+
 Since version 1.1.0, UserAgentSanitizer.user_agent is available:
 
     ua = UserAgentSanitizer.user_agent('Mozilla/5.0 (iPhone; CPU iPhone OS 5_0_1 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9A405 Safari/7534.48.3')
@@ -22,6 +22,11 @@ Since version 1.1.0, UserAgentSanitizer.user_agent is available:
     # => "iPhone"
     ua.to_s
     # => "Apple iPhone"
+
+Changes
+-------
+
+* Version 2.0: I care more about devices on mobile. On the desktop, I'll prioritize OS above browser. For this reason I broke backwards compatibility and now detect Microsoft Internet Explorer as the operating system instead of as a browser in its own right.
 
 Installation
 ------------
