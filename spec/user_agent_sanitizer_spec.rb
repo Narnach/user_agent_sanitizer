@@ -38,6 +38,7 @@ describe UserAgentSanitizer do
     'SEC-SGHM620/1.0 Openwave/6.2.3 Profile/MIDP-2.0 Configuration/CLDC-1.1 UP.Browser/6.2.3.3.c.1.101 (GUI) MMP/2.0'                                                   => ['SEC','SGH M620'],
     'SonyEricssonW995/R1FA Browser/NetFront/3.4 Profile/MIDP-2.1 Configuration/CLDC-1.1 JavaPlatform/JP-8.4.3'                                                          => ['SonyEricsson','W995'],
     '(compatible; MSIE 9.0; Windows Phone OS 7.5; Trident/5.0; IEMobile/9.0; NOKIA; Lumia 800)'                                                                         => ['Nokia','Lumia 800'],
+    '"Mozilla/5.0 (Linux; U; Android 4.0.3; nl-nl; SensationXE_Beats_Z715e Build/IML74K) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30"'      => ['HTC','Sensation XE Beats Z715e'],
 
     # Mobile browsers
     '(Android 4.0.3; Linux; Opera Mobi/ADR-1205181138; U; nl) Presto/2.10.254 Version/12.00'                                                                            => ['Opera', 'Mobi'],

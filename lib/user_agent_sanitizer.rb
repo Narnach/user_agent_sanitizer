@@ -84,12 +84,14 @@ module UserAgentSanitizer
         return "#{$1} #{$2}"
       when /(Blackberry) ?(\d+)/i
         return "#{$1} #{$2}"
+      when /Sensation(\w+)/i
+        @brand = "HTC"
+        @model = "Sensation #{$1.gsub("_", " ")}"
+        return nil
       when /(HTC)[_\/]([a-z0-9]+)?/i
         return [$1, $2].compact.join(" ")
       when /(Samsung)[\/\-]([a-z0-9]+)([\/\-]([a-z0-9]+))?/i
         return ['Samsung', $2, $4].compact.join(" ")
-      when /\((Linux; U; Android.*)\)/
-        return $1.split(";").last.split("/").first.gsub(/build/i, "").strip
       when /(iPod|iPad)/
         @brand = 'Apple'
         @model = $1
@@ -105,9 +107,13 @@ module UserAgentSanitizer
       when /(Windows NT \w+(\.\w+)+)/
         @brand = "Microsoft"
         @model = $1
+        return nil
       when /(nokia);\s*([\w ]+)/i
         @brand = $1.capitalize
         @model = $2
+        return nil
+      when /\((Linux; U; Android.*)\)/
+        return $1.split(";").last.split("/").first.gsub(/build/i, "").strip
       when /((#{BRANDS.join("|")}).*?)\//i
         result=$1
 
