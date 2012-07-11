@@ -105,6 +105,9 @@ module UserAgentSanitizer
       when /(Windows NT \w+(\.\w+)+)/
         @brand = "Microsoft"
         @model = $1
+      when /(nokia);\s*([\w ]+)/i
+        @brand = $1.capitalize
+        @model = $2
       when /((#{BRANDS.join("|")}).*?)\//i
         result=$1
 

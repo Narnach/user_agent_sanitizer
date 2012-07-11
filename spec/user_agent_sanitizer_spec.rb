@@ -37,6 +37,7 @@ describe UserAgentSanitizer do
     'SAMSUNG-SGH-L600/L600ASGI3 Profile/MIDP-2.0 Configuration/CLDC-1.1 UP.Browser/6.2.3.3.c.1.101 (GUI) MMP/2.0'                                                       => ['Samsung','SGH L600'],
     'SEC-SGHM620/1.0 Openwave/6.2.3 Profile/MIDP-2.0 Configuration/CLDC-1.1 UP.Browser/6.2.3.3.c.1.101 (GUI) MMP/2.0'                                                   => ['SEC','SGH M620'],
     'SonyEricssonW995/R1FA Browser/NetFront/3.4 Profile/MIDP-2.1 Configuration/CLDC-1.1 JavaPlatform/JP-8.4.3'                                                          => ['SonyEricsson','W995'],
+    '(compatible; MSIE 9.0; Windows Phone OS 7.5; Trident/5.0; IEMobile/9.0; NOKIA; Lumia 800)'                                                                         => ['Nokia','Lumia 800'],
 
     # Mobile browsers
     '(Android 4.0.3; Linux; Opera Mobi/ADR-1205181138; U; nl) Presto/2.10.254 Version/12.00'                                                                            => ['Opera', 'Mobi'],
