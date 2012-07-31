@@ -55,6 +55,7 @@ describe UserAgentSanitizer do
     'Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_5_5; nl-nl) AppleWebKit/525.18 (KHTML, like Gecko) Version/3.1.2 Safari/525.20.1'                                     => ['Apple','Mac OS X 10.5.5'],
     'Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_2; en-us) AppleWebKit/531.21.8 (KHTML, like Gecko) Version/4.0.4 Safari/531.21.10'                                  => ['Apple','Mac OS X 10.6.2'],
     '(Windows; U; Windows NT 6.1; en-US; rv:1.9.2.10) Gecko/20100914 Firefox/3.6.10'                                                                                    => ['Microsoft','Windows NT 6.1'],
+    'Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)'                                                                                            => ['Microsoft','Windows NT 6.1'],
   }
   describe "sanitize_user_agent" do
     DEVICES.each do |user_agent, brand_model|
