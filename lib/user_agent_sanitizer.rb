@@ -62,6 +62,8 @@ module UserAgentSanitizer
         result.gsub!(/^GT/i, 'Samsung GT')
         result.gsub!(/^Samsung GT\s+/i, 'Samsung GT-')
         result.gsub!(/^Desire(_\w+)/i, 'HTC Desire')
+        result.gsub!(/^Nexus/i, 'HTC Nexus')
+        result.gsub!(/^Galaxy Nexus/i, 'Samsung Galaxy Nexus')
         result.gsub!(/^iPhone/i, 'Apple iPhone')
         result = "SonyEricsson #{$1}" if result =~ /^SonyEricsson(\w+)/i
         result.strip!
@@ -100,9 +102,9 @@ module UserAgentSanitizer
         @brand = 'Sony'
         @model = 'PSP'
         return nil
-      when /Opera Mobi/
+      when /Opera (Mobi|Mini)/
         @brand = 'Opera'
-        @model = 'Mobi'
+        @model = $1
         return nil
       when /(Windows NT \w+(\.\w+)+)/
         @brand = "Microsoft"
