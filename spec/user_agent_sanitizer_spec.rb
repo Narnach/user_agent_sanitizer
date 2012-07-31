@@ -27,6 +27,8 @@ describe UserAgentSanitizer do
       'Mozilla/5.0 (Linux; U; Android 2.3.6; en-us; Nexus One Build/GRK39F) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1' => ['HTC', 'Nexus One'],
       'Mozilla/5.0 (Linux; U; Android 4.0.3; nl-nl; SensationXE_Beats_Z715e Build/IML74K) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30' => ['HTC', 'Sensation XE Beats'],
       'Mozilla/5.0 (Linux; U; Android 4.0.3; nl-nl; HTC_One_X Build/IML74K) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30' => ['HTC', 'One X'],
+      'Mozilla/5.0 (Linux; U; Android 2.2.1; nl-nl; HTC_Wildfire_A3333 Build/FRG83D) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1' => ['HTC', 'Wildfire'],
+      'Mozilla/5.0 (Linux; U; Android 2.3.5; nl-nl; HTC_WildfireS_A510e Build/GRJ90) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1' => ['HTC', 'Wildfire S'],
 
       # LG
       'LG-GD510/V100 Teleca/WAP2.0 Profile/MIDP-2.1 Configuration/CLDC-1.1' => ['LG', 'GD510'],
