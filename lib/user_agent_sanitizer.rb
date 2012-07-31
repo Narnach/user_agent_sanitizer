@@ -64,6 +64,9 @@ module UserAgentSanitizer
         result.gsub!(/^Nexus/i, 'HTC Nexus')
         result.gsub!(/^Galaxy Nexus/i, 'Samsung Galaxy Nexus')
         result.gsub!(/^iPhone/i, 'Apple iPhone')
+        if result =~ /^(HTC Wildfire [a-z]+) \w+/i
+          result = $1.strip
+        end
         result = "SonyEricsson #{$1}" if result =~ /^SonyEricsson(\w+)/i
         result.strip!
         result.squeeze!(" ")
@@ -89,12 +92,13 @@ module UserAgentSanitizer
         @brand = "HTC"
         @model = "#{$1.capitalize} #{$2.gsub("_", " ")}".squeeze(" ").split(" ").reject{|str| str =~ /^[a-z][0-9]/i}.join(" ")
         return nil
-      when /HTC_(One)_(\w+)/i
+      when /HTC_(One)_?([a-z]+)?/i
         @brand = "HTC"
         @model = [$1, $2].compact.join(" ")
         return nil
       when /(HTC)[_\/]([a-z0-9]+)/i
-        return [$1, $2, $3].compact.join(" ")
+        result = [$1, $2, $3].compact.join(" ")
+        return result
       when /(Samsung)[\/\-]([a-z0-9]+)([\/\-]([a-z0-9]+))?/i
         return ['Samsung', $2, $4].compact.join(" ")
       when /(iPod|iPad)/
@@ -118,7 +122,8 @@ module UserAgentSanitizer
         @model = $2
         return nil
       when /\((Linux; U; Android.*)\)/
-        return $1.split(";").last.split("/").first.gsub(/build/i, "").strip
+        result = $1.split(";").last.split("/").first.gsub(/build/i, "").strip
+        return result
       when /((#{BRANDS.join("|")}).*?)\//i
         result=$1
 
