@@ -3,8 +3,8 @@ Gem::Specification.new do |s|
   s.name         = 'user_agent_sanitizer'
   s.summary      = "Browser user agent sanitizer"
   s.description  = "Browser user agent sanitizer, with a focus on sanitizing mobile phone user agents to brand + model number"
-  s.version      = '2.0.1'
-  s.date         = '2012-07-11'
+  s.version      = '2.0.2'
+  s.date         = '2012-07-31'
   s.platform     = Gem::Platform::RUBY
   s.authors      = ["Wes Oldenbeuving"]
   s.email        = "narnach@gmail.com"
