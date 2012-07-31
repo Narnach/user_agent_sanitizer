@@ -20,11 +20,13 @@ describe UserAgentSanitizer do
       'HTC_Touch2_T3333 Opera/9.50 (Windows NT 5.1; U; nl)' => ['HTC', 'Touch2'],
       'Mozilla/5.0 (Linux; U; Android 1.5; en-gb; HTC Magic Build/CRB17) AppleWebKit/528.5+ (KHTML, like Gecko) Version/3.1.2 Mobile Safari/525.20.1' => ['HTC', 'Magic'],
       'Mozilla/5.0 (Linux; U; Android 2.1-update1; nl-nl; Desire_A8181 Build/ERE27) AppleWebKit/530.17 (KHTML, like Gecko) Version/4.0 Mobile Safari/530.17' => ['HTC', 'Desire'],
+      'Mozilla/5.0 (Linux; U; Android 2.3.5; nl-nl; HTC_DesireHD_A9191 Build/GRJ90) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1' => ['HTC', 'Desire HD'],
       'Mozilla/5.0 (Linux; U; Android 2.1; nl-nl; HTC Legend Build/ERD79) AppleWebKit/530.17 (KHTML, like Gecko) Version/4.0 Mobile Safari/530.17' => ['HTC', 'Legend'],
-      'Mozilla/5.0 (Linux; U; Android 2.2; nl-nl; HTC_DesireZ_A7272 Build/FRF91) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1' => ['HTC', 'DesireZ'],
-      'Mozilla/5.0 (Linux; U; Android 2.3.3; nl-nl; HTC/DesireS/1.32.161.2 Build/GRI40) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1' => ['HTC', 'DesireS'],
+      'Mozilla/5.0 (Linux; U; Android 2.2; nl-nl; HTC_DesireZ_A7272 Build/FRF91) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1' => ['HTC', 'Desire Z'],
+      'Mozilla/5.0 (Linux; U; Android 2.3.3; nl-nl; HTC/DesireS/1.32.161.2 Build/GRI40) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1' => ['HTC', 'Desire S'],
       'Mozilla/5.0 (Linux; U; Android 2.3.6; en-us; Nexus One Build/GRK39F) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1' => ['HTC', 'Nexus One'],
-      'Mozilla/5.0 (Linux; U; Android 4.0.3; nl-nl; SensationXE_Beats_Z715e Build/IML74K) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30' => ['HTC', 'Sensation XE Beats Z715e'],
+      'Mozilla/5.0 (Linux; U; Android 4.0.3; nl-nl; SensationXE_Beats_Z715e Build/IML74K) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30' => ['HTC', 'Sensation XE Beats'],
+      'Mozilla/5.0 (Linux; U; Android 4.0.3; nl-nl; HTC_One_X Build/IML74K) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30' => ['HTC', 'One X'],
 
       # LG
       'LG-GD510/V100 Teleca/WAP2.0 Profile/MIDP-2.1 Configuration/CLDC-1.1' => ['LG', 'GD510'],

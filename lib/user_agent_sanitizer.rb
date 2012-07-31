@@ -61,7 +61,6 @@ module UserAgentSanitizer
         result.gsub!(/^SAMSUNG/i, 'Samsung')
         result.gsub!(/^GT/i, 'Samsung GT')
         result.gsub!(/^Samsung GT\s+/i, 'Samsung GT-')
-        result.gsub!(/^Desire(_\w+)/i, 'HTC Desire')
         result.gsub!(/^Nexus/i, 'HTC Nexus')
         result.gsub!(/^Galaxy Nexus/i, 'Samsung Galaxy Nexus')
         result.gsub!(/^iPhone/i, 'Apple iPhone')
@@ -86,12 +85,16 @@ module UserAgentSanitizer
         return "#{$1} #{$2}"
       when /(Blackberry) ?(\d+)/i
         return "#{$1} #{$2}"
-      when /Sensation(\w+)/i
+      when /(Sensation|Desire)(\w+)/i
         @brand = "HTC"
-        @model = "Sensation #{$1.gsub("_", " ")}"
+        @model = "#{$1.capitalize} #{$2.gsub("_", " ")}".squeeze(" ").split(" ").reject{|str| str =~ /^[a-z][0-9]/i}.join(" ")
         return nil
-      when /(HTC)[_\/]([a-z0-9]+)?/i
-        return [$1, $2].compact.join(" ")
+      when /HTC_(One)_(\w+)/i
+        @brand = "HTC"
+        @model = [$1, $2].compact.join(" ")
+        return nil
+      when /(HTC)[_\/]([a-z0-9]+)/i
+        return [$1, $2, $3].compact.join(" ")
       when /(Samsung)[\/\-]([a-z0-9]+)([\/\-]([a-z0-9]+))?/i
         return ['Samsung', $2, $4].compact.join(" ")
       when /(iPod|iPad)/
