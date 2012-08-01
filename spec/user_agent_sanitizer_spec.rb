@@ -61,6 +61,9 @@ describe UserAgentSanitizer do
       'Mozilla/5.0 (Linux; U; Android 2.3.5; es-es; ZTE Skate Build/V1.0.0B03) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1' => ['ZTE', 'Skate'],
       'SAGEM-my411C/1.0/ MIDP-2.0 Configuration/CLDC-1.1 Browser/UP.Browser/7.2.6.c.1.386 (GUI)' => ['SAGEM', 'my411C'],
       'SEC-SGHM620/1.0 Openwave/6.2.3 Profile/MIDP-2.0 Configuration/CLDC-1.1 UP.Browser/6.2.3.3.c.1.101 (GUI) MMP/2.0' => ['SEC', 'SGH M620'],
+      'Mozilla/5.0 (Linux; U; Android 2.2.2; nl-nl; ALCATEL_one_touch_990 Build/FRG83G) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1' => ['Alcatel', 'One Touch 990'],
+      'Mozilla/5.0 (Linux; U; Android 2.3.6; nl-nl; ALCATEL ONE TOUCH 991 Build/GRJ90) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1' => ['Alcatel', 'One Touch 991'],
+      'Mozilla/5.0 (Linux; U; Android 2.3.6; nl-nl; ALCATEL_one_touch_995 Build/GINGERBREAD) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1' => ['Alcatel', 'One Touch 995'],
 
       # Mobile browsers
       '(Android 4.0.3; Linux; Opera Mobi/ADR-1205181138; U; nl) Presto/2.10.254 Version/12.00' => ['Opera', 'Mobi'],

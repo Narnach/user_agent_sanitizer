@@ -64,6 +64,7 @@ module UserAgentSanitizer
         result.gsub!(/^Nexus/i, 'HTC Nexus')
         result.gsub!(/^Galaxy Nexus/i, 'Samsung Galaxy Nexus')
         result.gsub!(/^iPhone/i, 'Apple iPhone')
+        result.gsub!(/^alcatel one touch/i, 'Alcatel One Touch')
         if result =~ /^(HTC Wildfire [a-z]+) \w+/i
           result = $1.strip
         end
@@ -122,7 +123,7 @@ module UserAgentSanitizer
         @model = $2
         return nil
       when /\((Linux; U; Android.*)\)/
-        result = $1.split(";").last.split("/").first.gsub(/build/i, "").strip
+        result = $1.split(";").last.split("/").first.gsub(/build/i, "").strip.gsub("_", " ")
         return result
       when /\(Linux; (U; )?Android \d+(\.\d+)+; (.+?)\)/
         result = $3.split(" ").reject{|str| str =~ /build/i}.join(" ")
