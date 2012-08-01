@@ -49,6 +49,7 @@ describe UserAgentSanitizer do
       'SAMSUNG-GT-C3510/C3510XXIL4 NetFront/3.5 Profile/MIDP-2.0 Configuration/CLDC-1.1' => ['Samsung', 'GT-C3510'],
       'SAMSUNG-SGH-L600/L600ASGI3 Profile/MIDP-2.0 Configuration/CLDC-1.1 UP.Browser/6.2.3.3.c.1.101 (GUI) MMP/2.0' => ['Samsung', 'SGH L600'],
       'Mozilla/5.0 (Linux; U; Android 4.1.1; nl-nl; Galaxy Nexus Build/JRO03C) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30' => ['Samsung', 'Galaxy Nexus'],
+      '(Linux; Android 4.1.1; Galaxy Nexus Build/JRO03C) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.166 Mobile Safari/535.19' => ['Samsung', 'Galaxy Nexus'],
 
       # SonyEricsson
       'Mozilla/5.0 (Linux; U; Android 1.6; nl-nl; SonyEricssonX10i Build/R1FA016) AppleWebKit/528.5+ (KHTML, like Gecko) Version/3.1.2 Mobile Safari/525.20.1' => ['SonyEricsson', 'X10i'],

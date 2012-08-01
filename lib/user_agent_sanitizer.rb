@@ -124,6 +124,9 @@ module UserAgentSanitizer
       when /\((Linux; U; Android.*)\)/
         result = $1.split(";").last.split("/").first.gsub(/build/i, "").strip
         return result
+      when /\(Linux; (U; )?Android \d+(\.\d+)+; (.+?)\)/
+        result = $3.split(" ").reject{|str| str =~ /build/i}.join(" ")
+        return result
       when /((#{BRANDS.join("|")}).*?)\//i
         result=$1
 
