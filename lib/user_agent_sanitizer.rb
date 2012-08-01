@@ -122,8 +122,12 @@ module UserAgentSanitizer
         @brand = $1.capitalize
         @model = $2
         return nil
+      when /zte[- _](blade|skate)/i
+        @brand = "ZTE"
+        @model = $1.capitalize
+        return nil
       when /\((Linux; U; Android.*)\)/
-        result = $1.split(";").last.split("/").first.gsub(/build/i, "").strip.gsub("_", " ")
+        result = $1.split(";").last.split("/").first.gsub(/build/i, "").strip.gsub(/[-_]/, " ")
         return result
       when /\(Linux; (U; )?Android \d+(\.\d+)+; (.+?)\)/
         result = $3.split(" ").reject{|str| str =~ /build/i}.join(" ")
