@@ -89,7 +89,7 @@ module UserAgentSanitizer
         return "#{$1} #{$2}"
       when /(Blackberry) ?(\d+)/i
         return "#{$1} #{$2}"
-      when /(Sensation|Desire|Wildfire)(\w+)/i
+      when /(Sensation|Desire|Wildfire|Incredible)(\w+)/i
         @brand = "HTC"
         @model = "#{$1.capitalize} #{$2.gsub("_", " ")}".squeeze(" ").split(" ").reject{|str| str =~ /^[a-z][0-9]/i}.join(" ")
         return nil
